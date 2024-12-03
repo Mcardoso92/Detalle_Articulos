@@ -155,7 +155,8 @@
             // 
             this.pbxArticulo.Location = new System.Drawing.Point(656, 44);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(205, 348);
+            this.pbxArticulo.Size = new System.Drawing.Size(272, 348);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 11;
             this.pbxArticulo.TabStop = false;
             // 
@@ -163,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 407);
+            this.ClientSize = new System.Drawing.Size(940, 407);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtFiltro);
@@ -177,6 +178,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "frmArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();

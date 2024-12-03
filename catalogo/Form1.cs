@@ -21,6 +21,8 @@ namespace catalogo
         {
             InitializeComponent();
         }
+
+        //Carga el formulario principal y rellena el comboBox del filtro.
         private void frmArticulos_Load(object sender, EventArgs e)
         {
             cargar();
@@ -28,6 +30,9 @@ namespace catalogo
             cboCampo.Items.Add("Precio");
             cboCampo.Items.Add("Marca");
         }
+
+        //Funcion para cargar en el dgvArticulos la lista de articulos de la
+        //base de datos.
         private void cargar()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -44,11 +49,15 @@ namespace catalogo
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        //Funcion para ocultar Columnas que no necesitamos en el dgvArticulos
         private void ocultarColumnas()
         {
             dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;            
         }
+
+        //Funcion para cargar la imagen en pbxArticulo si es que existe una.
         private void cargarImagen(string imagen)
         {
             try
@@ -60,12 +69,15 @@ namespace catalogo
                 pbxArticulo.Load("https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg");
             }
         }
+        //Evento de click "agregar" Abre el frmAltaArticulo.
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
             cargar();
         }
+        //Evento de click "modificar" Abre el frmAltaArticulo con los datos
+        //precargados del elemento a modificar.
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Articulos seleccionado;
@@ -76,6 +88,7 @@ namespace catalogo
             cargar();
             
         }
+        //Evento de click "eliminar" elimina el elemento seleccionado.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminar();
